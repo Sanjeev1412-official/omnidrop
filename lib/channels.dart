@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'dart:convert';
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -109,7 +110,7 @@ class _ChannelsScreenState extends State<ChannelsScreen> {
       alignment: Alignment.center,
       child: Text(
         initial,
-        style: const TextStyle(
+        style: GoogleFonts.montserrat(
           fontSize: 24,
           fontWeight: FontWeight.w900,
           color: _C.ink,
@@ -143,9 +144,9 @@ class _ChannelsScreenState extends State<ChannelsScreen> {
                     ),
                   ),
                   const SizedBox(width: 24),
-                  const Text(
+                  Text(
                     'Device Details.',
-                    style: TextStyle(
+                    style: GoogleFonts.montserrat(
                       fontSize: 32,
                       fontWeight: FontWeight.w900,
                       color: _C.ink,
@@ -176,9 +177,9 @@ class _ChannelsScreenState extends State<ChannelsScreen> {
         children: [
           Icon(LucideIcons.radio, size: 64, color: _C.borderDk),
           const SizedBox(height: 16),
-          const Text(
+          Text(
             'No Channels',
-            style: TextStyle(
+            style: GoogleFonts.montserrat(
               fontSize: 24,
               fontWeight: FontWeight.w900,
               color: _C.ink,
@@ -186,9 +187,9 @@ class _ChannelsScreenState extends State<ChannelsScreen> {
             ),
           ),
           const SizedBox(height: 8),
-          const Text(
+          Text(
             'You have not paired with any devices yet.',
-            style: TextStyle(color: _C.grey60, fontSize: 16),
+            style: GoogleFonts.montserrat(color: _C.grey60, fontSize: 16),
           ),
         ],
       ),
@@ -236,7 +237,7 @@ class _ChannelsScreenState extends State<ChannelsScreen> {
                   Expanded(
                     child: Text(
                       '$displayName\'s Device',
-                      style: const TextStyle(
+                      style: GoogleFonts.montserrat(
                         fontSize: 24,
                         fontWeight: FontWeight.w900,
                         color: _C.ink,
@@ -255,8 +256,8 @@ class _ChannelsScreenState extends State<ChannelsScreen> {
                     SizedBox(
                       width: 110,
                       child: Text(
-                        '${e.key.toUpperCase()}',
-                        style: const TextStyle(
+                        e.key.toUpperCase(),
+                        style: GoogleFonts.montserrat(
                           fontSize: 11,
                           fontWeight: FontWeight.w900,
                           color: _C.grey60,
@@ -267,7 +268,7 @@ class _ChannelsScreenState extends State<ChannelsScreen> {
                     Expanded(
                       child: Text(
                         '${e.value}',
-                        style: const TextStyle(
+                        style: GoogleFonts.montserrat(
                           fontSize: 15,
                           fontWeight: FontWeight.w700,
                           color: _C.ink,
@@ -288,7 +289,7 @@ class _ChannelsScreenState extends State<ChannelsScreen> {
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                   ),
-                  child: const Text('Close', style: const TextStyle(fontWeight: FontWeight.w900)),
+                  child: Text('Close', style: GoogleFonts.montserrat(fontWeight: FontWeight.w900)),
                 ),
               ),
             ],
@@ -303,7 +304,7 @@ class _ChannelsScreenState extends State<ChannelsScreen> {
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       itemCount: _pairedDevices.length,
-      separatorBuilder: (_, __) => const SizedBox(height: 20),
+      separatorBuilder: (_, _) => const SizedBox(height: 20),
       itemBuilder: (context, index) {
         final device = _pairedDevices[index];
         final username = device['username'] as String;
@@ -337,7 +338,7 @@ class _ChannelsScreenState extends State<ChannelsScreen> {
               border: Border.all(color: _C.border, width: 1),
               boxShadow: [
                 BoxShadow(
-                  color: _C.ink.withOpacity(0.03),
+                  color: _C.ink.withValues(alpha: 0.03),
                   blurRadius: 20,
                   offset: const Offset(0, 8),
                 ),
@@ -360,7 +361,7 @@ class _ChannelsScreenState extends State<ChannelsScreen> {
                     children: [
                       Text(
                         displayName,
-                        style: const TextStyle(
+                        style: GoogleFonts.montserrat(
                           fontSize: 20,
                           fontWeight: FontWeight.w900,
                           color: _C.ink,
@@ -372,7 +373,7 @@ class _ChannelsScreenState extends State<ChannelsScreen> {
                       const SizedBox(height: 2),
                       Text(
                         '@$username',
-                        style: const TextStyle(
+                        style: GoogleFonts.montserrat(
                           fontSize: 11,
                           fontWeight: FontWeight.w700,
                           color: _C.grey60,
@@ -401,7 +402,7 @@ class _ChannelsScreenState extends State<ChannelsScreen> {
                               Flexible(
                                 child: Text(
                                   displayModelName,
-                                  style: const TextStyle(
+                                  style: GoogleFonts.montserrat(
                                     fontSize: 9,
                                     fontWeight: FontWeight.w900,
                                     color: _C.ink,

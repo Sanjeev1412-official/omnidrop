@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
@@ -406,7 +407,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                 alignment: Alignment.center,
                 child: Text(
                   'Sign Up',
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                     fontWeight: FontWeight.bold,
                     color: _isSignUpMode ? _C.bg : _C.grey60,
                   ),
@@ -440,7 +441,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                 alignment: Alignment.center,
                 child: Text(
                   'Log In',
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                     fontWeight: FontWeight.bold,
                     color: !_isSignUpMode ? _C.bg : _C.grey60,
                   ),
@@ -472,9 +473,9 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                     alignment: Alignment.center,
                     children: [
                       Image.asset('assets/OMNIDROP_icon_with_title-Photoroom.png', width: 150, height: 150),
-                      // const Text(
+                      // Text(
                       //   'OMNIDROP',
-                      //   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: _C.ink, letterSpacing: 2),
+                      //   style: GoogleFonts.montserrat(fontSize: 24, fontWeight: FontWeight.w900, color: _C.ink, letterSpacing: 2),
                       // ),
                       
                       AnimatedSwitcher(
@@ -499,13 +500,13 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                               : 'Sign in to resume sharing.',
                             key: ValueKey<bool>(_isSignUpMode),
                             textAlign: TextAlign.center,
-                            style: const TextStyle(fontSize: 13, color: _C.grey60, height: 1.4, fontWeight: FontWeight.w500),
+                            style: TextStyle(fontSize: 13, color: _C.grey60, height: 1.4, fontWeight: FontWeight.w500),
                           ),
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 24),
+                  SizedBox(height: 24),
 
                   // Supabase Config Warning Banner
                   if (!SupabaseConfig.isSupabaseConfigured) ...[
@@ -519,22 +520,22 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                       child: Row(
                         children: [
                           const Icon(LucideIcons.alertTriangle, color: Colors.amber, size: 18),
-                          const SizedBox(width: 12),
+                          SizedBox(width: 12),
                           Expanded(
                             child: Text(
                               'Running in local sandbox mode. Configure "lib/supabase_config.dart" to connect your live Supabase DB.',
-                              style: TextStyle(color: Colors.amber.shade900, fontSize: 12, height: 1.3, fontWeight: FontWeight.w600),
+                              style: GoogleFonts.montserrat(color: Colors.amber.shade900, fontSize: 12, height: 1.3, fontWeight: FontWeight.w600),
                             ),
                           ),
                         ],
                       ),
                     ),
-                    const SizedBox(height: 24),
+                    SizedBox(height: 24),
                   ],
 
                   // Tab Selector
                   _buildModeSelector(),
-                  const SizedBox(height: 32),
+                  SizedBox(height: 32),
 
                   // Avatar Picker (Sign Up Mode Only)
                   AnimatedSize(
@@ -581,12 +582,12 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                                         ),
                                       ],
                                     ),
-                                    const SizedBox(height: 12),
+                                    SizedBox(height: 12),
                                     Text(
                                       _avatarBytes == null 
                                           ? 'Set profile image'
                                           : 'Change profile image',
-                                      style: const TextStyle(
+                                      style: GoogleFonts.montserrat(
                                         fontSize: 12,
                                         fontWeight: FontWeight.bold,
                                         color: _C.grey60,
@@ -596,16 +597,16 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                                   ],
                                 ),
                               ),
-                              const SizedBox(height: 32),
+                              SizedBox(height: 32),
                             ],
                           )
-                        : const SizedBox.shrink(),
+                        : SizedBox.shrink(),
                   ),
 
                   // Unique Username Input field
                   TextFormField(
                     controller: _usernameController,
-                    style: const TextStyle(color: _C.ink, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.montserrat(color: _C.ink, fontWeight: FontWeight.bold),
                     inputFormatters: [
                       LengthLimitingTextInputFormatter(16),
                       FilteringTextInputFormatter.allow(RegExp(r'[a-z0-9._]')),
@@ -621,7 +622,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                     },
                     decoration: InputDecoration(
                       labelText: 'Username',
-                      labelStyle: const TextStyle(color: _C.grey60, fontWeight: FontWeight.bold),
+                      labelStyle: GoogleFonts.montserrat(color: _C.grey60, fontWeight: FontWeight.bold),
                       prefixIcon: const Icon(LucideIcons.atSign, size: 18, color: _C.grey60),
                       suffixIcon: _isSignUpMode
                           ? (_isChecking
@@ -669,25 +670,25 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               if (_validationError != null) ...[
-                                const SizedBox(height: 8),
+                                SizedBox(height: 8),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 4),
                                   child: Row(
                                     children: [
                                       const Icon(LucideIcons.xCircle, size: 16, color: Colors.redAccent),
-                                      const SizedBox(width: 8),
+                                      SizedBox(width: 8),
                                       Expanded(
                                         child: Text(
                                           _validationError!,
-                                          style: const TextStyle(color: Colors.redAccent, fontSize: 13, fontWeight: FontWeight.bold),
+                                          style: GoogleFonts.montserrat(color: Colors.redAccent, fontSize: 13, fontWeight: FontWeight.bold),
                                         ),
                                       ),
                                     ],
                                   ),
                                 ),
                               ] else if (_isAvailable == true) ...[
-                                const SizedBox(height: 8),
-                                const Padding(
+                                SizedBox(height: 8),
+                                Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 4),
                                   child: Row(
                                     children: [
@@ -695,7 +696,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                                       SizedBox(width: 8),
                                       Text(
                                         'Username is available!',
-                                        style: TextStyle(color: _C.onlineDot, fontSize: 13, fontWeight: FontWeight.bold),
+                                        style: GoogleFonts.montserrat(color: _C.onlineDot, fontSize: 13, fontWeight: FontWeight.bold),
                                       ),
                                     ],
                                   ),
@@ -703,29 +704,29 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                               ],
           
                               if (_suggestions.isNotEmpty) ...[
-                                const SizedBox(height: 16),
-                                const Align(
+                                SizedBox(height: 16),
+                                Align(
                                   alignment: Alignment.centerLeft,
                                   child: Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 4),
+                                    padding: const EdgeInsets.symmetric(horizontal: 4),
                                     child: Text(
                                       'Available suggestions:',
-                                      style: TextStyle(fontSize: 12, color: _C.grey60, fontWeight: FontWeight.w600),
+                                      style: GoogleFonts.montserrat(fontSize: 12, color: _C.grey60, fontWeight: FontWeight.w600),
                                     ),
                                   ),
                                 ),
-                                const SizedBox(height: 8),
+                                SizedBox(height: 8),
                                 SizedBox(
                                   height: 38,
                                   child: ListView.separated(
                                     scrollDirection: Axis.horizontal,
                                     itemCount: _suggestions.length,
-                                    separatorBuilder: (context, index) => const SizedBox(width: 8),
+                                    separatorBuilder: (context, index) => SizedBox(width: 8),
                                     itemBuilder: (context, index) {
                                       final suggestion = _suggestions[index];
                                       return ActionChip(
                                         label: Text(suggestion),
-                                        labelStyle: const TextStyle(color: _C.ink, fontWeight: FontWeight.bold, fontSize: 13),
+                                        labelStyle: GoogleFonts.montserrat(color: _C.ink, fontWeight: FontWeight.bold, fontSize: 13),
                                         backgroundColor: _C.bg,
                                         padding: const EdgeInsets.symmetric(horizontal: 10),
                                         side: const BorderSide(color: _C.border, width: 1.5),
@@ -743,15 +744,15 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                               ],
                             ],
                           )
-                        : const SizedBox.shrink(),
+                        : SizedBox.shrink(),
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: 16),
 
                   // Password Field
                   TextFormField(
                     controller: _passwordController,
                     obscureText: _obscurePassword,
-                    style: const TextStyle(color: _C.ink, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.montserrat(color: _C.ink, fontWeight: FontWeight.bold),
                     validator: (val) {
                       if (val == null || val.isEmpty) return 'Password is mandatory';
                       if (_isSignUpMode) {
@@ -772,7 +773,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                     },
                     decoration: InputDecoration(
                       labelText: 'Password',
-                      labelStyle: const TextStyle(color: _C.grey60, fontWeight: FontWeight.bold),
+                      labelStyle: GoogleFonts.montserrat(color: _C.grey60, fontWeight: FontWeight.bold),
                       prefixIcon: const Icon(LucideIcons.lock, size: 18, color: _C.grey60),
                       suffixIcon: IconButton(
                         icon: Icon(
@@ -803,7 +804,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                       floatingLabelBehavior: FloatingLabelBehavior.never,
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: 16),
 
                   // Confirm Password Field (Sign Up Only)
                   AnimatedSize(
@@ -816,7 +817,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                               TextFormField(
                                 controller: _confirmPasswordController,
                                 obscureText: _obscureConfirmPassword,
-                                style: const TextStyle(color: _C.ink, fontWeight: FontWeight.bold),
+                                style: GoogleFonts.montserrat(color: _C.ink, fontWeight: FontWeight.bold),
                                 validator: (val) {
                                   if (val == null || val.isEmpty) return 'Please confirm your password';
                                   if (val != _passwordController.text) return 'Passwords do not match';
@@ -824,7 +825,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                                 },
                                 decoration: InputDecoration(
                                   labelText: 'Confirm Password',
-                                  labelStyle: const TextStyle(color: _C.grey60, fontWeight: FontWeight.bold),
+                                  labelStyle: GoogleFonts.montserrat(color: _C.grey60, fontWeight: FontWeight.bold),
                                   prefixIcon: const Icon(LucideIcons.lock, size: 18, color: _C.grey60),
                                   suffixIcon: IconButton(
                                     icon: Icon(
@@ -855,10 +856,10 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                                   floatingLabelBehavior: FloatingLabelBehavior.never,
                                 ),
                               ),
-                              const SizedBox(height: 32),
+                              SizedBox(height: 32),
                             ],
                           )
-                        : const SizedBox(height: 16),
+                        : SizedBox(height: 16),
                   ),
 
                   // Submit button
@@ -890,7 +891,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                         elevation: 0,
                       ),
                       child: _isLoading 
-                          ? const SizedBox(
+                          ? SizedBox(
                               width: 24, 
                               height: 24, 
                               child: CircularProgressIndicator(color: _C.bg, strokeWidth: 2),
@@ -912,7 +913,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                               child: Text(
                                 _isSignUpMode ? 'CREATE PROFILE' : 'LOG IN', 
                                 key: ValueKey<bool>(_isSignUpMode),
-                                style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 16, letterSpacing: 1),
+                                style: GoogleFonts.montserrat(fontWeight: FontWeight.w900, fontSize: 16, letterSpacing: 1),
                               ),
                             ),
                     ),

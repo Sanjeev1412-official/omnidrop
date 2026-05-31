@@ -261,7 +261,7 @@ class P2PManager {
         if (interface.name.toLowerCase().contains('vethernet') || interface.name.toLowerCase().contains('wsl') || interface.name.toLowerCase().contains('virtual')) continue;
         for (var addr in interface.addresses) {
           if (!addr.isLoopback && addr.address.contains('.')) {
-            if (localIp == null) localIp = addr.address;
+            localIp ??= addr.address;
             if (addr.address.startsWith('192.168.')) {
               localIp = addr.address;
               break;
@@ -356,9 +356,7 @@ class P2PManager {
           }
           for (var addr in interface.addresses) {
             if (!addr.isLoopback && addr.address.contains('.')) {
-              if (localIp == null) {
-                localIp = addr.address; // Fallback
-              }
+              localIp ??= addr.address;
               if (addr.address.startsWith('192.168.')) {
                 localIp = addr.address; // Best match
                 break;

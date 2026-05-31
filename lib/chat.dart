@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
@@ -256,19 +257,19 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                     child: const Icon(LucideIcons.alertTriangle, color: _C.exitdelete, size: 32),
                   ),
-                  const SizedBox(height: 24),
-                  const Text(
+                  SizedBox(height: 24),
+                  Text(
                     'Clear Chat',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: GoogleFonts.montserrat(
                       fontSize: 24,
                       fontWeight: FontWeight.w900,
                       color: _C.ink,
                       letterSpacing: -0.5,
                     ),
                   ),
-                  const SizedBox(height: 12),
-                  const Text(
+                  SizedBox(height: 12),
+                  Text(
                     'Are you sure you want to clear all messages? This action cannot be undone.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -278,7 +279,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  const SizedBox(height: 32),
+                  SizedBox(height: 32),
                   Row(
                     children: [
                       Expanded(
@@ -292,9 +293,9 @@ class _ChatScreenState extends State<ChatScreen> {
                               border: Border.all(color: _C.ink, width: 2),
                             ),
                             alignment: Alignment.center,
-                            child: const Text(
+                            child: Text(
                               'Cancel',
-                              style: TextStyle(
+                              style: GoogleFonts.montserrat(
                                 color: _C.ink,
                                 fontWeight: FontWeight.w900,
                                 fontSize: 15,
@@ -303,7 +304,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 16),
+                      SizedBox(width: 16),
                       Expanded(
                         child: GestureDetector(
                           onTap: () async {
@@ -318,9 +319,9 @@ class _ChatScreenState extends State<ChatScreen> {
                               border: Border.all(color: _C.ink, width: 2),
                             ),
                             alignment: Alignment.center,
-                            child: const Text(
+                            child: Text(
                               'Clear',
-                              style: TextStyle(
+                              style: GoogleFonts.montserrat(
                                 color: _C.white,
                                 fontWeight: FontWeight.w900,
                                 fontSize: 15,
@@ -380,11 +381,11 @@ class _ChatScreenState extends State<ChatScreen> {
               Clipboard.setData(ClipboardData(text: msg.text));
               ToastUtils.showCustomToast(context, 'Message copied to clipboard', icon: LucideIcons.copy);
             },
-            child: const Row(
+            child: Row(
               children: [
                 Icon(LucideIcons.copy, color: _C.ink, size: 18),
                 SizedBox(width: 12),
-                Text('Copy Text', style: TextStyle(color: _C.ink, fontWeight: FontWeight.w700)),
+                Text('Copy Text', style: GoogleFonts.montserrat(color: _C.ink, fontWeight: FontWeight.w700)),
               ],
             ),
           ),
@@ -394,11 +395,11 @@ class _ChatScreenState extends State<ChatScreen> {
               _showDeleteMessageConfirmation(msg);
             });
           },
-          child: const Row(
+          child: Row(
             children: [
               Icon(LucideIcons.trash2, color: _C.exitdelete, size: 18),
               SizedBox(width: 12),
-              Text('Delete Message', style: TextStyle(color: _C.exitdelete, fontWeight: FontWeight.bold)),
+              Text('Delete Message', style: GoogleFonts.montserrat(color: _C.exitdelete, fontWeight: FontWeight.bold)),
             ],
           ),
         ),
@@ -441,19 +442,19 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                     child: const Icon(LucideIcons.trash2, color: _C.exitdelete, size: 32),
                   ),
-                  const SizedBox(height: 24),
-                  const Text(
+                  SizedBox(height: 24),
+                  Text(
                     'Delete Message',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: GoogleFonts.montserrat(
                       fontSize: 24,
                       fontWeight: FontWeight.w900,
                       color: _C.ink,
                       letterSpacing: -0.5,
                     ),
                   ),
-                  const SizedBox(height: 12),
-                  const Text(
+                  SizedBox(height: 12),
+                  Text(
                     'Are you sure you want to delete this message? This action cannot be undone.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -463,7 +464,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  const SizedBox(height: 32),
+                  SizedBox(height: 32),
                   Row(
                     children: [
                       Expanded(
@@ -477,9 +478,9 @@ class _ChatScreenState extends State<ChatScreen> {
                               border: Border.all(color: _C.ink, width: 2),
                             ),
                             alignment: Alignment.center,
-                            child: const Text(
+                            child: Text(
                               'Cancel',
-                              style: TextStyle(
+                              style: GoogleFonts.montserrat(
                                 color: _C.ink,
                                 fontWeight: FontWeight.w900,
                                 fontSize: 15,
@@ -488,7 +489,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 16),
+                      SizedBox(width: 16),
                       Expanded(
                         child: GestureDetector(
                           onTap: () async {
@@ -503,9 +504,9 @@ class _ChatScreenState extends State<ChatScreen> {
                               border: Border.all(color: _C.ink, width: 2),
                             ),
                             alignment: Alignment.center,
-                            child: const Text(
+                            child: Text(
                               'Delete',
-                              style: TextStyle(
+                              style: GoogleFonts.montserrat(
                                 color: _C.white,
                                 fontWeight: FontWeight.w900,
                                 fontSize: 15,
@@ -981,7 +982,7 @@ class _ChatScreenState extends State<ChatScreen> {
         ),
         child: Text(
           _formatDateHeader(date).toUpperCase(),
-          style: const TextStyle(
+          style: GoogleFonts.montserrat(
             fontSize: 11,
             fontWeight: FontWeight.w900,
             color: _C.ink,
@@ -1052,29 +1053,29 @@ class _ChatScreenState extends State<ChatScreen> {
                   child: _peerAvatarBase64 == null
                       ? Text(
                           widget.peerUsername.isNotEmpty ? widget.peerUsername[0].toUpperCase() : 'U',
-                          style: const TextStyle(fontWeight: FontWeight.bold, color: _C.ink, fontSize: 16),
+                          style: GoogleFonts.montserrat(fontWeight: FontWeight.bold, color: _C.ink, fontSize: 16),
                         )
                       : null,
                 ),
               ),
             ),
-            const SizedBox(width: 12),
+            SizedBox(width: 12),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     _peerDisplayName ?? widget.peerUsername,
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: _C.ink, letterSpacing: -0.5),
+                    style: GoogleFonts.montserrat(fontSize: 18, fontWeight: FontWeight.bold, color: _C.ink, letterSpacing: 0.5),
                   ),
                   
-                  const SizedBox(height: 2),
+                  SizedBox(height: 2),
                   Row(
                     children: [
                       
                       Text(
                         isOnline ? 'Online' : 'Offline',
-                        style: TextStyle(fontSize: 10, color: isOnline ? _C.onlineDot : _C.exitdelete, fontWeight: FontWeight.w600),
+                        style: GoogleFonts.montserrat(fontSize: 10, color: isOnline ? _C.onlineDot : _C.exitdelete, fontWeight: FontWeight.w600),
                       ),
                     ],
                   ),
@@ -1095,13 +1096,13 @@ class _ChatScreenState extends State<ChatScreen> {
             },
             itemBuilder: (BuildContext context) {
               return [
-                const PopupMenuItem<String>(
+                PopupMenuItem<String>(
                   value: 'clear',
                   child: Row(
                     children: [
-                      Icon(LucideIcons.trash2, color: _C.exitdelete, size: 18),
-                      SizedBox(width: 8),
-                      Text('Clear Chat', style: TextStyle(color: _C.exitdelete, fontWeight: FontWeight.bold)),
+                      const Icon(LucideIcons.trash2, color: _C.exitdelete, size: 18),
+                      const SizedBox(width: 8),
+                      Text('Clear Chat', style: GoogleFonts.montserrat(color: _C.exitdelete, fontWeight: FontWeight.w600)),
                     ],
                   ),
                 ),
@@ -1194,12 +1195,12 @@ class _ChatScreenState extends State<ChatScreen> {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                  const SizedBox(height: 4),
+                  SizedBox(height: 4),
                   Align(
                     alignment: Alignment.bottomRight,
                     child: Text(
                       _formatTime12Hour(msg.timestamp),
-                      style: TextStyle(
+                      style: GoogleFonts.montserrat(
                         fontSize: 10,
                         fontWeight: FontWeight.w900,
                         color: isMe ? _C.ink.withValues(alpha: 0.7) : _C.grey60,
@@ -1253,7 +1254,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   size: 20,
                 ),
               ),
-              const SizedBox(width: 10),
+              SizedBox(width: 10),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -1262,19 +1263,19 @@ class _ChatScreenState extends State<ChatScreen> {
                       msg.fileName!,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: _C.ink),
+                      style: GoogleFonts.montserrat(fontWeight: FontWeight.bold, fontSize: 13, color: _C.ink),
                     ),
-                    const SizedBox(height: 4),
+                    SizedBox(height: 4),
                     Row(
                       children: [
                         Text(
                           _formatFileSize(msg.fileSize ?? 0),
-                          style: const TextStyle(fontSize: 11, color: _C.grey60, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.montserrat(fontSize: 11, color: _C.grey60, fontWeight: FontWeight.bold),
                         ),
-                        const SizedBox(width: 4),
+                        SizedBox(width: 4),
                         Text(
                           "• ${msg.fileExtension!.toUpperCase()}",
-                          style: const TextStyle(fontSize: 11, color: _C.grey60, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.montserrat(fontSize: 11, color: _C.grey60, fontWeight: FontWeight.bold),
                         )
                       ],
                     ),
@@ -1287,7 +1288,7 @@ class _ChatScreenState extends State<ChatScreen> {
             ],
           ),
           if (!isDone) ...[
-            const SizedBox(height: 12),
+            SizedBox(height: 12),
             ClipRRect(
               borderRadius: BorderRadius.zero,
               child: Container(
@@ -1302,18 +1303,18 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8),
             Row(
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   '${(progressVal * 100).toInt()}%',
-                  style: const TextStyle(fontSize: 10, color: _C.ink, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.montserrat(fontSize: 10, color: _C.ink, fontWeight: FontWeight.bold),
                 ),
                 if (speed != null)
                   Text(
                     speed,
-                    style: const TextStyle(fontSize: 10, color: _C.ink, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.montserrat(fontSize: 10, color: _C.ink, fontWeight: FontWeight.bold),
                   ),
               ],
             ),
@@ -1367,12 +1368,12 @@ class _ChatScreenState extends State<ChatScreen> {
                       enabled: isOnline,
                       controller: _messageController,
                       onSubmitted: (_) => _sendMessage(),
-                      style: const TextStyle(fontSize: 14, color: _C.ink, fontWeight: FontWeight.bold),
+                      style: GoogleFonts.montserrat(fontSize: 14, color: _C.ink, fontWeight: FontWeight.bold),
                       maxLines: 4,
                       minLines: 1,
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         hintText: 'TYPE MESSAGE...',
-                        hintStyle: TextStyle(
+                        hintStyle: GoogleFonts.montserrat(
                           color: _C.grey60, 
                           fontWeight: FontWeight.w900, 
                           letterSpacing: 1.0,

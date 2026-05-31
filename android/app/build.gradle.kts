@@ -33,6 +33,17 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
     }
+
+    // Rename the output APK from app-release.apk → OmniDrop-{versionName}.apk
+    applicationVariants.all {
+        val variant = this
+        variant.outputs
+            .map { it as com.android.build.gradle.internal.api.BaseVariantOutputImpl }
+            .forEach { output ->
+                val versionName = variant.versionName
+                output.outputFileName = "OmniDrop-${versionName}.apk"
+            }
+    }
 }
 
 dependencies {

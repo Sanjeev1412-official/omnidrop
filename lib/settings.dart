@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:omnidrop/core/sync_service.dart';
@@ -79,9 +80,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                   ),
                   const SizedBox(width: 24),
-                  const Text(
+                  Text(
                     'Preferences.',
-                    style: TextStyle(
+                    style: GoogleFonts.montserrat(
                       fontSize: 32,
                       fontWeight: FontWeight.w900,
                       color: _C.ink,
@@ -128,7 +129,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Text('Backup & Sync', style: TextStyle(color: _C.ink, fontWeight: FontWeight.bold, fontSize: 16)),
+                                  Text('Backup & Sync', style: GoogleFonts.montserrat(color: _C.ink, fontWeight: FontWeight.bold, fontSize: 16)),
                                   const SizedBox(height: 4),
                                   Text(
                                     'Requires an active internet connection.',
@@ -136,9 +137,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   ),
                                   if (!SupabaseConfig.isSupabaseConfigured) ...[
                                     const SizedBox(height: 8),
-                                    const Text(
+                                    Text(
                                       'Cloud backup is disabled in local sandbox mode.',
-                                      style: TextStyle(color: Colors.amber, fontSize: 12, fontWeight: FontWeight.w600),
+                                      style: GoogleFonts.montserrat(color: Colors.amber, fontSize: 12, fontWeight: FontWeight.w600),
                                     ),
                                   ],
                                 ],
@@ -148,7 +149,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             Switch(
                               value: _backupEnabled,
                               onChanged: SupabaseConfig.isSupabaseConfigured ? _toggleBackup : null,
-                              activeColor: _C.onlineDot,
+                              activeThumbColor: _C.onlineDot,
                               activeTrackColor: _C.ink,
                               inactiveThumbColor: _C.grey60,
                               inactiveTrackColor: _C.border,

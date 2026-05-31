@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
@@ -48,7 +49,7 @@ class ToastUtils {
               Expanded(
                 child: Text(
                   message,
-                  style: const TextStyle(
+                  style: GoogleFonts.montserrat(
                     color: _C.ink,
                     fontSize: 13,
                     fontWeight: FontWeight.bold,

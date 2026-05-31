@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
@@ -643,9 +644,9 @@ class _PairingScreenState extends State<PairingScreen>
           child: const Icon(LucideIcons.arrowLeft, color: _C.ink, size: 18),
         ),
       ),
-      title: const Text(
+      title: Text(
         'PAIR DEVICE',
-        style: TextStyle(
+        style: GoogleFonts.montserrat(
           fontWeight: FontWeight.w900,
           fontSize: 14,
           color: _C.ink,
@@ -720,7 +721,7 @@ class _PairingScreenState extends State<PairingScreen>
               ),
             ),
           ),
-          const SizedBox(height: 5),
+          SizedBox(height: 5),
 
           // Big editorial headline
           Center(
@@ -734,11 +735,11 @@ class _PairingScreenState extends State<PairingScreen>
                     type: MaterialType.transparency,
                     child: RichText(
                       textAlign: TextAlign.center,
-                      text: const TextSpan(
+                      text: TextSpan(
                         children: [
                           TextSpan(
                             text: 'CONNECT\n',
-                            style: TextStyle(
+                            style: GoogleFonts.montserrat(
                               fontSize: 36,
                               fontWeight: FontWeight.w900,
                               color: _C.ink,
@@ -748,7 +749,7 @@ class _PairingScreenState extends State<PairingScreen>
                           ),
                           TextSpan(
                             text: 'DEVICES',
-                            style: TextStyle(
+                            style: GoogleFonts.montserrat(
                               fontSize: 36,
                               fontWeight: FontWeight.w900,
                               color: _C.grey30,
@@ -778,14 +779,14 @@ class _PairingScreenState extends State<PairingScreen>
               },
             ),
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: 16),
           _RouteBoundEntrance(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Center(child: Container(height: 1, width: 48, color: _C.borderDk)),
-          const SizedBox(height: 16),
-          const Center(
+          SizedBox(height: 16),
+          Center(
             child: Text(
               'Both devices must be on the same Wi-Fi.',
               textAlign: TextAlign.center,
@@ -798,12 +799,12 @@ class _PairingScreenState extends State<PairingScreen>
             ),
           ),
 
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
 
           // Section label
           
           Container(height: 1, color: _C.border),
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
 
           Row(
             children: [
@@ -816,7 +817,7 @@ class _PairingScreenState extends State<PairingScreen>
                   onTap: _startHosting,
                 ),
               ),
-              const SizedBox(width: 14),
+              SizedBox(width: 14),
               Expanded(
                 child: _RoleCard(
                   icon: LucideIcons.scanLine,
@@ -828,7 +829,7 @@ class _PairingScreenState extends State<PairingScreen>
               ),
             ],
           ),
-          const SizedBox(height: 32),
+          SizedBox(height: 32),
         ], // end inner column children
       ), // end inner column
     ), // end _RouteBoundEntrance
@@ -887,15 +888,15 @@ class _PairingScreenState extends State<PairingScreen>
               ),
             ),
           ),
-          const SizedBox(height: 28),
+          SizedBox(height: 28),
 
           Text(
             _statusMessage,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 13, color: _C.grey60, height: 1.5),
+            style: TextStyle(fontSize: 13, color: _C.grey60, height: 1.5),
           ),
 
-          const SizedBox(height: 40),
+          SizedBox(height: 40),
 
           // PIN display card
           Container(
@@ -907,16 +908,16 @@ class _PairingScreenState extends State<PairingScreen>
             ),
             child: Column(
               children: [
-                const Text(
+                Text(
                   'PAIRING CODE',
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                     fontSize: 10,
                     fontWeight: FontWeight.w800,
                     letterSpacing: 2.5,
                     color: _C.grey60,
                   ),
                 ),
-                const SizedBox(height: 16),
+                SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: _myPin.isEmpty
@@ -952,7 +953,7 @@ class _PairingScreenState extends State<PairingScreen>
                                 alignment: Alignment.center,
                                 child: Text(
                                   e.value,
-                                  style: const TextStyle(
+                                  style: GoogleFonts.montserrat(
                                     fontSize: 24,
                                     fontWeight: FontWeight.w900,
                                     color: _C.ink,
@@ -964,8 +965,8 @@ class _PairingScreenState extends State<PairingScreen>
                           );
                         }).toList(),
                 ),
-                const SizedBox(height: 14),
-                const Text(
+                SizedBox(height: 14),
+                Text(
                   'Share this code with the other device',
                   style: TextStyle(
                     fontSize: 11,
@@ -977,7 +978,7 @@ class _PairingScreenState extends State<PairingScreen>
             ),
           ),
 
-          const SizedBox(height: 32),
+          SizedBox(height: 32),
 
           // Info rows
           _InfoRow(
@@ -985,7 +986,7 @@ class _PairingScreenState extends State<PairingScreen>
             text:
                 'Auto-connect is active — the other device will pair automatically when it scans.',
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: 10),
           _InfoRow(
             icon: LucideIcons.keyboard,
             text:
@@ -1025,7 +1026,7 @@ class _PairingScreenState extends State<PairingScreen>
             ),
           ),
 
-          const SizedBox(height: 24),
+          SizedBox(height: 24),
 
           // Status heading + message
           AnimatedSwitcher(
@@ -1037,18 +1038,18 @@ class _PairingScreenState extends State<PairingScreen>
                   _detectedHostName != null
                       ? 'DEVICE FOUND'
                       : (isLinking ? 'CONNECTING' : 'SCANNING'),
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                     fontSize: 22,
                     fontWeight: FontWeight.w900,
                     color: _detectedHostName != null ? _C.green : _C.ink,
                     letterSpacing: -0.5,
                   ),
                 ),
-                const SizedBox(height: 6),
+                SizedBox(height: 6),
                 Text(
                   _statusMessage,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
                     color: _C.grey60,
                     height: 1.4,
@@ -1058,7 +1059,7 @@ class _PairingScreenState extends State<PairingScreen>
             ),
           ),
 
-          const SizedBox(height: 36),
+          SizedBox(height: 36),
 
           // Divider with label
           Row(
@@ -1066,9 +1067,9 @@ class _PairingScreenState extends State<PairingScreen>
               Expanded(child: Container(height: 1, color: _C.border)),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: const Text(
+                child: Text(
                   'ENTER PIN MANUALLY',
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                     fontSize: 9,
                     fontWeight: FontWeight.w800,
                     letterSpacing: 1.5,
@@ -1080,7 +1081,7 @@ class _PairingScreenState extends State<PairingScreen>
             ],
           ),
 
-          const SizedBox(height: 22),
+          SizedBox(height: 22),
 
           // PIN display & hidden input
           Stack(
@@ -1108,7 +1109,7 @@ class _PairingScreenState extends State<PairingScreen>
                     alignment: Alignment.center,
                     child: Text(
                       digit,
-                      style: TextStyle(
+                      style: GoogleFonts.montserrat(
                         fontSize: 22,
                         fontWeight: FontWeight.w900,
                         color: hasDigit ? _C.bg : _C.grey30,
@@ -1128,12 +1129,12 @@ class _PairingScreenState extends State<PairingScreen>
                   autofocus: true,
                   showCursor: false,
                   enableInteractiveSelection: false,
-                  style: const TextStyle(
+                  style: GoogleFonts.montserrat(
                     fontSize: 22,
                     color: Colors.transparent, // Keeps text invisible
                   ),
                   cursorColor: Colors.transparent,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     border: InputBorder.none,
                     counterText: '',
                     fillColor: Colors.transparent,
@@ -1150,7 +1151,7 @@ class _PairingScreenState extends State<PairingScreen>
             duration: const Duration(milliseconds: 300),
             curve: Curves.easeOutCirc,
             child: _errorMessage.isEmpty
-                ? const SizedBox(width: double.infinity)
+                ? SizedBox(width: double.infinity)
                 : Padding(
                     padding: const EdgeInsets.only(top: 14),
                     child: Container(
@@ -1172,11 +1173,11 @@ class _PairingScreenState extends State<PairingScreen>
                             size: 14,
                             color: _C.red,
                           ),
-                          const SizedBox(width: 10),
+                          SizedBox(width: 10),
                           Expanded(
                             child: Text(
                               _errorMessage,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 12,
                                 color: _C.red,
                                 height: 1.4,
@@ -1189,10 +1190,10 @@ class _PairingScreenState extends State<PairingScreen>
                   ),
           ),
 
-          const SizedBox(height: 24),
+          SizedBox(height: 24),
 
           if (isLinking)
-            const SizedBox(
+            SizedBox(
               width: 20,
               height: 20,
               child: CircularProgressIndicator(strokeWidth: 2, color: _C.ink),
@@ -1258,33 +1259,33 @@ class _PairingScreenState extends State<PairingScreen>
                 ),
               ),
             ),
-            const SizedBox(height: 32),
-            const Text(
+            SizedBox(height: 32),
+            Text(
               'LINKED',
-              style: TextStyle(
+              style: GoogleFonts.montserrat(
                 fontSize: 42,
                 fontWeight: FontWeight.w900,
                 color: _C.ink,
                 letterSpacing: -2,
               ),
             ),
-            const SizedBox(height: 4),
-            const Text(
+            SizedBox(height: 4),
+            Text(
               'SUCCESSFULLY',
-              style: TextStyle(
+              style: GoogleFonts.montserrat(
                 fontSize: 42,
                 fontWeight: FontWeight.w900,
                 color: _C.grey30,
                 letterSpacing: -2,
               ),
             ),
-            const SizedBox(height: 16),
+            SizedBox(height: 16),
             Container(height: 1, width: 48, color: _C.borderDk),
-            const SizedBox(height: 16),
+            SizedBox(height: 16),
             Text(
               _statusMessage,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 13,
                 color: _C.grey60,
                 height: 1.5,
@@ -1367,7 +1368,7 @@ class _RoleCardState extends State<_RoleCard> {
                 ),
                 child: Text(
                   widget.tag,
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                     fontSize: Platform.isWindows?9:6,
                     fontWeight: FontWeight.w900,
                     color: _pressed ? _C.bg : _C.grey60,
@@ -1405,17 +1406,17 @@ class _RoleCardState extends State<_RoleCard> {
                 children: [
                   Text(
                     widget.label,
-                    style: TextStyle(
+                    style: GoogleFonts.montserrat(
                       fontSize: 16,
                       fontWeight: FontWeight.w900,
                       color: _pressed ? _C.bg : _C.ink,
                       letterSpacing: -0.5,
                     ),
                   ),
-                  const SizedBox(height: 6),
+                  SizedBox(height: 6),
                   Text(
                     widget.subtitle,
-                    style: TextStyle(
+                    style: GoogleFonts.montserrat(
                       fontSize: 11,
                       fontWeight: FontWeight.w600,
                       color: _pressed
@@ -1447,11 +1448,11 @@ class _InfoRow extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Icon(icon, size: 14, color: _C.grey30),
-        const SizedBox(width: 10),
+        SizedBox(width: 10),
         Expanded(
           child: Text(
             text,
-            style: const TextStyle(fontSize: 12, color: _C.grey60, height: 1.5),
+            style: TextStyle(fontSize: 12, color: _C.grey60, height: 1.5),
           ),
         ),
       ],
@@ -1617,7 +1618,7 @@ class _EditorialPulsePainter extends CustomPainter {
 
 class _RouteBoundEntrance extends StatelessWidget {
   final Widget child;
-  const _RouteBoundEntrance({Key? key, required this.child}) : super(key: key);
+  const _RouteBoundEntrance({required this.child});
 
   @override
   Widget build(BuildContext context) {

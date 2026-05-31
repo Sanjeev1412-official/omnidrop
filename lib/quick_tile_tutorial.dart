@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -66,10 +67,10 @@ class QuickTileTutorialDialog extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              const Text(
+              Text(
                 'Quick Settings',
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                   fontSize: 18,
                   fontWeight: FontWeight.w900,
                   color: _C.ink,
@@ -77,10 +78,10 @@ class QuickTileTutorialDialog extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              const Text(
+              Text(
                 'Swipe down your notification shade and edit your Quick Settings to add the OmniDrop tile. Use it to instantly turn on sharing from anywhere!',
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                   fontSize: 13,
                   color: _C.grey60,
                   height: 1.4,
@@ -99,9 +100,9 @@ class QuickTileTutorialDialog extends StatelessWidget {
                     border: Border.all(color: _C.ink, width: 2),
                   ),
                   alignment: Alignment.center,
-                  child: const Text(
+                  child: Text(
                     'Got it!',
-                    style: TextStyle(
+                    style: GoogleFonts.montserrat(
                       color: _C.bg,
                       fontWeight: FontWeight.w900,
                       fontSize: 14,

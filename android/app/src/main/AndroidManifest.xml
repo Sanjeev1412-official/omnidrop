@@ -18,6 +18,8 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Auto-update: allow installing downloaded APKs (Android 8+) -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
     <application
         android:label="OmniDrop"
@@ -80,6 +82,20 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
+        <!-- FileProvider for sharing downloaded APK files with the system installer -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.omnidrop.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- Required for flutter_local_notifications background actions (e.g. Cancel button) -->
+        <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ActionBroadcastReceiver" />
     </application>
 
     <!-- Required to query activities that can process text, see:
