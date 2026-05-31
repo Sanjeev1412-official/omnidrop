@@ -44,9 +44,12 @@ void main() async {
   });
   
   // Preload heavy Lottie JSON videos in the background so they play instantly later
-  AssetLottie('assets/quicktile.json').load().catchError((e) {
-    debugPrint('Failed to preload Lottie: $e');
-  });
+  AssetLottie('assets/quicktile.json').load().then(
+    (_) {}, 
+    onError: (e) {
+      debugPrint('Failed to preload Lottie: $e');
+    }
+  );
   
   if (SupabaseConfig.isSupabaseConfigured) {
     try {
