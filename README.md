@@ -24,8 +24,7 @@ Based on the repository structure, OmniDrop utilizes a cross-platform framework 
 *   **Native Android Layer (`android/app/src/main/kotlin/com/example/omnidrop/`):** 
     *   `MainActivity.kt`: The primary application entry point.
     *   `OmniDropTileService.kt`: Implements the custom Android Quick Settings tile UI (`ic_qs_omnidrop.png`).
-    *   `StartServiceActivity.kt`: Manages persistent background execution (`ic_bg_service_small.png`) to ensure file transfers remain stable even when the app is minimized.
-
+    
 ---
 
 ## 🚀 Getting Started
@@ -39,7 +38,7 @@ Based on the repository structure, OmniDrop utilizes a cross-platform framework 
 
 1. **Clone the repository:**
 ```bash
-   git clone [https://github.com/your-username/omnidrop.git](https://github.com/your-username/omnidrop.git)
+   git clone https://github.com/your-username/omnidrop.git
    cd omnidrop
 ```
 Install dependencies:
